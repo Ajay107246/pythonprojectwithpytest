@@ -1,0 +1,49 @@
+Yes, `pytest` offers a variety of command-line arguments to customize your test runs. Here are some commonly used ones:
+
+1. **Basic Options**:
+   - `-v` or `--verbose`: Increase verbosity.
+   - `-q` or `--quiet`: Decrease verbosity.
+   - `-x` or `--exitfirst`: Stop after the first failure.
+   - `--maxfail=N`: Stop after N failures.
+
+2. **Selecting Tests**:
+   - `-k EXPRESSION`: Only run tests that match the given substring expression.
+   - `-m MARKEXPR`: Only run tests matching the given mark expression.
+
+3. **Test Discovery**:
+   - `--pyargs`: Test modules by importing them.
+   - `--ignore=PATH`: Ignore the specified path during test discovery.
+   - `--deselect=NODEID`: Deselect the specified test.
+
+4. **Reporting**:
+   - `--tb=STYLE`: Traceback print mode (auto/long/short/line/native/no).
+   - `--durations=N`: Show N slowest setup/test durations.
+
+5. **Configuration**:
+   - `-c FILE`: Load configuration from the specified file.
+   - `--rootdir=ROOTDIR`: Define the root directory for tests.
+
+6. **Plugins**:
+   - `--disable-warnings`: Disable warnings summary.
+   - `--strict-markers`: Ensure all markers are registered.
+
+7. **Running Specific Tests**:
+   - `pytest path/to/test_file.py::test_function`: Run a specific test function.
+
+8. **Passing Arguments**:
+   - `--all`: Custom argument example for running all tests¹.
+
+For a full list of options, you can run:
+```sh
+pytest --help
+```
+
+Would you like more details on any specific option or how to use them in your tests?
+
+Source: Conversation with Copilot, 7/27/2024
+(1) Parametrizing tests — pytest documentation. https://docs.pytest.org/en/7.1.x/example/parametrize.html.
+(2) How to pass arguments in pytest by command line. https://stackoverflow.com/questions/40880259/how-to-pass-arguments-in-pytest-by-command-line.
+(3) python - How to specify more than one option in pytest config [pytest .... https://stackoverflow.com/questions/17557313/how-to-specify-more-than-one-option-in-pytest-config-pytest-addoption.
+(4) python - How to pass arguments to pytest if pytest is run .... https://stackoverflow.com/questions/41575155/how-to-pass-arguments-to-pytest-if-pytest-is-run-programmatically-from-another-m.
+(5) Basic patterns and examples — pytest documentation. https://docs.pytest.org/en/7.1.x/example/simple.html.
+(6) en.wikipedia.org. https://en.wikipedia.org/wiki/Pytest.
