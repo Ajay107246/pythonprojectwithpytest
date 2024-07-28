@@ -12,13 +12,21 @@ from main import decrement
 import main
 import unittest
 
-def test_increment():
-    x=1
-    assert increment(x) == 2
+class TestIncreDecrement(unittest.TestCase):
 
-def test_decremet():
-    x=5
-    assert decrement(x) == 4
+    # instead of writing variable repeatatively in functions which have same init value
+    # use setUp(self) method to use it
+    # so that we can replace values at one place and use it over the class
+    def setUp(self):
+        self.x=10
+    
+    def test_increment(self):
+        assert increment(self.x) == 11
+    
+    def test_decremet(self):
+        #x=5
+        assert decrement(self.x) == 9
+
 
 """
 this is example of unittest with python cide
