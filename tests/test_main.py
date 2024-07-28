@@ -5,6 +5,8 @@ unittest example #1
 NOTE:
 1. make sure you have setup pytest environment correctly
 2. make sure you have set interpretor for each module correctly
+3. run on terminal with debug logs
+py -m pytest -s
 """
 from main import increment
 from main import decrement
@@ -18,12 +20,19 @@ class TestIncreDecrement(unittest.TestCase):
     # use setUp(self) method to use it
     # so that we can replace values at one place and use it over the class
     def setUp(self):
+        print("\nSETUP called...!")
         self.x=10
-    
+
+    def tearDown(self):
+        #return super().tearDown()
+        print("TEAR-DOWN called...!")
+        
     def test_increment(self):
+        print("test_increment called...!")
         assert increment(self.x) == 11
     
     def test_decremet(self):
+        print("test_decrement called...!")
         #x=5
         assert decrement(self.x) == 9
 
@@ -44,18 +53,23 @@ class Test_TestIncrementDecrement(unittest.TestCase):
     # comment3: checks if main.decrement(3) does not return 4. 
     # If it returns any value other than 4, the test passes; otherwise, it fails
     def test_decrement(self):
+        print("\nmain.decrement(3) called...!")
         self.assertNotEqual(main.decrement(3),4)
 
     """
     #negative TC, which will failed because Hello from this TC will not match with actual string
     def test_firstFunctionEqual(self):
-        self.assertEqual(main.firstFunction(), "Hello")
+        self.assertNotEqual(main.firstFunction(), "Hello")
     """
     # comment4: checks if main.firstFunction() returns False. If it does, the test passes; otherwise, it fails. 
     # The string "Hello" is an optional message that will be displayed if the test fails.
     def test_firstFunctionFalse(self):
+        print("\ntest_firstFunctionFals() called...!")
         self.assertFalse(main.firstFunction(), "Hello")
-        
+    
+    """def test_firstFunctionTrue(self):
+        self.assertEqual(main.firstFunction(), "Hello, This is my first python program in VS code!")
+    """
 
     def test_incrementTest(self):
         self.assertEqual(increment(5),6)
