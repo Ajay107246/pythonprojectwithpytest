@@ -1,0 +1,7 @@
+1. how to run this py and pytest file:
+Run any python command as:
+e.g. 
+py -m pip install pytest
+py -m pip pytest --version
+
+py -m pytest -v 
